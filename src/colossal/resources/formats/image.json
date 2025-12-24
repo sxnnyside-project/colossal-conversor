@@ -1,0 +1,122 @@
+{
+  "category": "image",
+  "formats": [
+    "png",
+    "jpeg",
+    "webp",
+    "bmp",
+    "tiff",
+    "gif",
+    "ico",
+    "svg",
+    "heic"
+  ],
+  "families": {
+    "jpeg": ["jpg", "jpeg", "jfif"]
+  },
+  "types": {
+    "raster": ["png", "jpeg", "webp", "bmp", "tiff", "gif", "heic", "ico"],
+    "vector": ["svg"]
+  },
+  "engines": {
+    "default": "imagemagick",
+    "heic": "libheif"
+  },
+  "presets": {
+    "icon": {
+      "sizes": [16, 32, 48, 64, 128, 256],
+      "background": "transparent"
+    },
+    "web": {
+      "max_width": 1920,
+      "quality": 85,
+      "strip_metadata": true
+    },
+    "print": {
+      "dpi": 300,
+      "colorspace": "CMYK"
+    }
+  },
+  "conversions": [
+    {
+      "from": ["png", "jpeg", "webp", "bmp", "tiff"],
+      "to": "png",
+      "engine": "default",
+      "mode": "raster_convert",
+      "fidelity": "high",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.png"
+      }
+    },
+    {
+      "from": ["png", "jpeg", "webp", "bmp", "tiff"],
+      "to": "jpeg",
+      "engine": "default",
+      "mode": "lossy_convert",
+      "default_preset": "web",
+      "warnings": ["lossy"],
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.jpg"
+      }
+    },
+    {
+      "from": ["png", "jpeg"],
+      "to": "webp",
+      "engine": "default",
+      "mode": "lossy_or_lossless",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.webp"
+      }
+    },
+    {
+      "from": ["png", "jpeg"],
+      "to": "ico",
+      "engine": "default",
+      "mode": "multi_raster",
+      "default_preset": "icon",
+      "limitations": ["max_256px"],
+      "output": {
+        "type": "multi_file",
+        "multi_size": true,
+        "pattern": "{input_name_no_ext}_{size}x{size}.ico"
+      }
+    },
+    {
+      "from": "svg",
+      "to": ["png", "jpeg", "webp"],
+      "engine": "default",
+      "mode": "vector_rasterize",
+      "fidelity": "resolution_dependent",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.{target_ext}"
+      }
+    },
+    {
+      "from": "gif",
+      "to": "png",
+      "engine": "default",
+      "mode": "first_frame",
+      "warnings": ["animation_lost"],
+      "output": {
+        "type": "multi_file",
+        "multi_frame": false,
+        "pattern": "{input_name_no_ext}.png"
+      }
+    },
+    {
+      "from": "heic",
+      "to": ["jpeg", "png", "webp"],
+      "engine": "heic",
+      "mode": "decode",
+      "limitations": ["platform_dependent"],
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.{target_ext}"
+      }
+    }
+  ]
+}

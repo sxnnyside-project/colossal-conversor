@@ -1,0 +1,264 @@
+{
+  "version": "1.0",
+  "categories": {
+    "image": {
+      "label": "Images",
+      "formats": {
+        "png": {
+          "label": "PNG Image",
+          "extensions": [".png"],
+          "mime": "image/png",
+          "lossy": false
+        },
+        "jpg": {
+          "label": "JPEG Image",
+          "extensions": [".jpg", ".jpeg"],
+          "mime": "image/jpeg",
+          "lossy": true
+        },
+        "ico": {
+          "label": "ICO Image",
+          "extensions": [".ico"],
+          "mime": "image/x-icon",
+          "lossy": false
+        },
+        "jfif": {
+          "label": "JFIF Image",
+          "extensions": [".jfif"],
+          "mime": "image/jpeg",
+          "lossy": true
+        },
+        "webp": {
+          "label": "WEBP Image",
+          "extensions": [".webp"],
+          "mime": "image/webp",
+          "lossy": true
+        },
+        "svg": {
+          "label": "SVG Image",
+          "extensions": [".svg"],
+          "mime": "image/svg+xml",
+          "lossy": false
+        },
+        "bmp": {
+          "label": "BMP Image",
+          "extensions": [".bmp"],
+          "mime": "image/bmp",
+          "lossy": false
+        },
+        "tiff": {
+          "label": "TIFF Image",
+          "extensions": [".tiff", ".tif"],
+          "mime": "image/tiff",
+          "lossy": false
+        },
+        "gif": {
+          "label": "GIF Image",
+          "extensions": [".gif"],
+          "mime": "image/gif",
+          "lossy": true,
+          "animated": true
+        },
+        "heic": {
+          "label": "HEIC Image",
+          "extensions": [".heic"],
+          "mime": "image/heic",
+          "lossy": true
+        }
+      }
+    },
+    "audio": {
+      "label": "Audio",
+      "formats": {
+        "mp3": {
+          "label": "MP3 Audio",
+          "extensions": [".mp3"],
+          "mime": "audio/mpeg",
+          "lossy": true
+        },
+        "wav": {
+          "label": "WAV Audio",
+          "extensions": [".wav"],
+          "mime": "audio/wav",
+          "lossy": false
+        },
+        "flac": {
+          "label": "FLAC Audio",
+          "extensions": [".flac"],
+          "mime": "audio/flac",
+          "lossy": false
+        },
+        "aac": {
+          "label": "AAC Audio",
+          "extensions": [".aac"],
+          "mime": "audio/aac",
+          "lossy": true
+        },
+        "ogg": {
+          "label": "OGG Audio",
+          "extensions": [".ogg"],
+          "mime": "audio/ogg",
+          "lossy": true
+        },
+        "m4a": {
+          "label": "M4A Audio",
+          "extensions": [".m4a"],
+          "mime": "audio/mp4",
+          "lossy": true
+        },
+        "amr": {
+          "label": "AMR Audio",
+          "extensions": [".amr"],
+          "mime": "audio/amr",
+          "lossy": true
+        }
+      }
+    },
+    "document": {
+      "label": "Documents",
+      "formats": {
+        "doc": {
+          "label": "DOC Document",
+          "extensions": [".doc"],
+          "mime": "application/msword",
+          "lossy": false
+        },
+        "docx": {
+          "label": "DOCX Document",
+          "extensions": [".docx"],
+          "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "lossy": false
+        },
+        "odt": {
+          "label": "ODT Document",
+          "extensions": [".odt"],
+          "mime": "application/vnd.oasis.opendocument.text",
+          "lossy": false
+        },
+        "rtf": {
+          "label": "RTF Document",
+          "extensions": [".rtf"],
+          "mime": "application/rtf",
+          "lossy": false
+        },
+        "txt": {
+          "label": "Plain Text",
+          "extensions": [".txt"],
+          "mime": "text/plain",
+          "lossy": false
+        },
+        "pdf": {
+          "label": "PDF Document",
+          "extensions": [".pdf"],
+          "mime": "application/pdf",
+          "lossy": false
+        },
+        "md": {
+          "label": "Markdown",
+          "extensions": [".md"],
+          "mime": "text/markdown",
+          "lossy": false
+        }
+      }
+    },
+    "sheet": {
+      "label": "Spreadsheets",
+      "formats": {
+        "xls": {
+          "label": "XLS Spreadsheet",
+          "extensions": [".xls"],
+          "mime": "application/vnd.ms-excel",
+          "lossy": false
+        },
+        "xlsx": {
+          "label": "XLSX Spreadsheet",
+          "extensions": [".xlsx"],
+          "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "lossy": false
+        },
+        "csv": {
+          "label": "CSV",
+          "extensions": [".csv"],
+          "mime": "text/csv",
+          "lossy": false
+        },
+        "ods": {
+          "label": "ODS Spreadsheet",
+          "extensions": [".ods"],
+          "mime": "application/vnd.oasis.opendocument.spreadsheet",
+          "lossy": false
+        },
+        "tsv": {
+          "label": "TSV",
+          "extensions": [".tsv"],
+          "mime": "text/tab-separated-values",
+          "lossy": false
+        }
+      }
+    },
+    "slide": {
+      "label": "Presentations",
+      "formats": {
+        "pptx": {
+          "label": "PPTX Presentation",
+          "extensions": [".pptx"],
+          "mime": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+          "lossy": false
+        },
+        "ppt": {
+          "label": "PPT Presentation",
+          "extensions": [".ppt"],
+          "mime": "application/vnd.ms-powerpoint",
+          "lossy": false
+        },
+        "odp": {
+          "label": "ODP Presentation",
+          "extensions": [".odp"],
+          "mime": "application/vnd.oasis.opendocument.presentation",
+          "lossy": false
+        }
+      }
+    },
+    "video": {
+      "label": "Video",
+      "formats": {
+        "mp4": {
+          "label": "MP4 Video",
+          "extensions": [".mp4"],
+          "mime": "video/mp4",
+          "lossy": true
+        },
+        "avi": {
+          "label": "AVI Video",
+          "extensions": [".avi"],
+          "mime": "video/x-msvideo",
+          "lossy": true
+        },
+        "mov": {
+          "label": "MOV Video",
+          "extensions": [".mov"],
+          "mime": "video/quicktime",
+          "lossy": true
+        },
+        "mkv": {
+          "label": "MKV Video",
+          "extensions": [".mkv"],
+          "mime": "video/x-matroska",
+          "lossy": true
+        },
+        "flv": {
+          "label": "FLV Video",
+          "extensions": [".flv"],
+          "mime": "video/x-flv",
+          "lossy": true
+        },
+        "wmv": {
+          "label": "WMV Video",
+          "extensions": [".wmv"],
+          "mime": "video/x-ms-wmv",
+          "lossy": true
+        }
+      }
+    }
+  }
+}

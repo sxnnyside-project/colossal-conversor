@@ -5,11 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e29c95b-e1c1-4c32-bce6-b053dcb6f83a" name="Changes" comment=" First version">
-      <change afterPath="$PROJECT_DIR$/Colossal Conversor.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Colossal Conversor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/colossal.spec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/run_colossal.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/builder/audio_converter_builder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/builder/image_converter_builder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/converters/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/converters/document_converter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/converters/image_converter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/converters/sheet_converter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/converters/slide_converter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/converters/video_converter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/core/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/core/base_converter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/core/engine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/core/format_loader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/core/registry.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/models/conversion_error.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/models/conversion_task.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/models/format_manifest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/models/task_status.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/resources/format_manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/resources/formats/audio.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/resources/formats/document.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/resources/formats/image.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/resources/formats/sheet.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/resources/formats/slide.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/resources/formats/video.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/resources/theme.qss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/tests/fake_image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/tests/manifest_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/tests/registry_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/tests/status_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/ui/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/ui/dialogs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colossal/ui/main_window.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/build.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Colossal Conversor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Colossal Conversor.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conversor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Conversor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,23 +67,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "HoujouSxnnyside"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;HoujouSxnnyside&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/HoujouSxnnyside/Colossal-Conversor.git",
-    "accountId": "80a6924b-e144-48c7-a5e7-08d250a16e09"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/HoujouSxnnyside/Colossal-Conversor.git&quot;,
+    &quot;accountId&quot;: &quot;e8125c2d-a952-45bf-b3a7-52d3b7011ce2&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2uF2Ha2ds9xSmgwIYxPHpz6jyDz" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -50,22 +90,114 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.Conversor.executor": "Run",
+    "Python.audio_converter_builder.executor": "Run",
+    "Python.image_converter_builder.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.registry_test.executor": "Run",
+    "Python.test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHELLCHECK.PATH": "/Users/ti/Library/Application Support/JetBrains/PyCharmCE2025.1/plugins/Shell Script/shellcheck",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/salva/PycharmProjects/PythonProject",
     "settings.editor.selected.configurable": "preferences.pluginManager"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "GitIgnore"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\salva\PycharmProjects\PythonProject" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/colossal/core" />
+      <recent name="$PROJECT_DIR$/src/colossal/models" />
+      <recent name="$PROJECT_DIR$/src/colossal/tests" />
+      <recent name="$PROJECT_DIR$/src/colossal/resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.image_converter_builder">
+    <configuration name="audio_converter_builder" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Colossal Conversor" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/colossal/builder" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/colossal/builder/audio_converter_builder.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="image_converter_builder" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Colossal Conversor" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/colossal/builder" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/colossal/builder/image_converter_builder.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Colossal Conversor" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/colossal" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/colossal/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.image_converter_builder" />
+        <item itemvalue="Python.audio_converter_builder" />
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-fc1d50d2d915-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.24978.54" />
+        <option value="bundled-python-sdk-dfff61a61320-9cdd278e9d02-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.25410.159" />
       </set>
     </attachedChunks>
   </component>
@@ -92,5 +224,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value=" First version" />
     <option name="LAST_COMMIT_MESSAGE" value=" First version" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>

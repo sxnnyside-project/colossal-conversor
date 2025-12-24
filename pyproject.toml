@@ -1,0 +1,21 @@
+[project]
+name = "colossal-conversor"
+version = "4.0.0"
+description = "Offline multi-format file conversion utility"
+authors = [{ name = "Sxnnyside Project" }]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+
+dependencies = [
+    "PySide6",
+    "pillow",
+    "ffmpeg-python",
+    "pydub",
+    "python-i18n",
+    "cairosvg",
+    "pillow-heif"
+]
+
+[project.scripts]
+colossal = "colossal.main:main"

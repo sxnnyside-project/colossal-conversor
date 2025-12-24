@@ -1,0 +1,112 @@
+{
+  "category": "sheet",
+  "formats": ["xls", "xlsx", "ods", "csv", "tsv", "pdf", "html"],
+  "types": {
+    "spreadsheet": ["xls", "xlsx", "ods"],
+    "tabular": ["csv", "tsv"],
+    "visual": ["pdf", "html"]
+  },
+  "engines": {
+    "office": "soffice",
+    "tabular": "pandas",
+    "pdf_table": ["tabula", "camelot"]
+  },
+  "presets": {
+    "pdf_export": {
+      "orientation": "auto",
+      "fit_to_page": true,
+      "repeat_headers": true
+    },
+    "csv_safe": {
+      "delimiter": ",",
+      "quote_all": false,
+      "encoding": "utf-8"
+    }
+  },
+  "conversions": [
+    {
+      "from": ["xls", "xlsx", "ods"],
+      "to": "pdf",
+      "engine": "office",
+      "mode": "layout_export",
+      "fidelity": "high",
+      "default_preset": "pdf_export",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.pdf"
+      }
+    },
+    {
+      "from": ["xls", "xlsx", "ods"],
+      "to": ["csv", "tsv"],
+      "engine": "tabular",
+      "mode": "flatten_sheets",
+      "warnings": ["formulas_lost", "styles_lost", "multi_sheet_merge"],
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.{target_ext}"
+      }
+    },
+    {
+      "from": ["csv", "tsv"],
+      "to": ["xls", "xlsx", "ods"],
+      "engine": "tabular",
+      "mode": "single_sheet_import",
+      "limitations": ["no_formulas", "no_styles"],
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.{target_ext}"
+      }
+    },
+    {
+      "from": ["xls", "xlsx", "ods"],
+      "to": ["xls", "xlsx", "ods"],
+      "engine": "office",
+      "mode": "native_convert",
+      "fidelity": "high",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.{target_ext}"
+      }
+    },
+    {
+      "from": "pdf",
+      "to": ["xlsx", "ods"],
+      "engine": "pdf_table",
+      "mode": "table_extraction",
+      "fidelity": "inferred",
+      "warnings": ["layout_loss", "merged_cells_approx"],
+      "options": {
+        "strategy": ["lattice", "stream"],
+        "one_sheet_per_page": true
+      },
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.{target_ext}"
+      }
+    },
+    {
+      "from": "pdf",
+      "to": ["csv", "tsv"],
+      "engine": "pdf_table",
+      "mode": "table_extraction",
+      "fidelity": "low",
+      "warnings": ["structure_inferred"],
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.{target_ext}"
+      }
+    },
+    {
+      "from": ["xls", "xlsx", "ods"],
+      "to": "html",
+      "engine": "office",
+      "mode": "visual_export",
+      "fidelity": "medium",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.html"
+      }
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "category": "audio",
+  "formats": [
+    "mp3",
+    "wav",
+    "flac",
+    "aac",
+    "ogg",
+    "m4a",
+    "amr",
+    "mp4"
+  ],
+  "engine": "ffmpeg",
+  "conversions": [
+    {
+      "from": "*",
+      "to": "mp3",
+      "codec": "libmp3lame",
+      "mode": "transcode",
+      "fidelity": "medium",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.mp3"
+      }
+    },
+    {
+      "from": "*",
+      "to": "wav",
+      "codec": "pcm_s16le",
+      "mode": "decode",
+      "fidelity": "lossless",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.wav"
+      }
+    },
+    {
+      "from": "*",
+      "to": "flac",
+      "codec": "flac",
+      "mode": "transcode",
+      "fidelity": "lossless",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.flac"
+      }
+    },
+    {
+      "from": "*",
+      "to": "aac",
+      "codec": "aac",
+      "mode": "transcode",
+      "fidelity": "medium",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.aac"
+      }
+    },
+    {
+      "from": "*",
+      "to": "ogg",
+      "codec": "libvorbis",
+      "mode": "transcode",
+      "fidelity": "medium",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.ogg"
+      }
+    },
+    {
+      "from": "*",
+      "to": "m4a",
+      "codec": "aac",
+      "container": "mp4",
+      "mode": "transcode",
+      "fidelity": "medium",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.m4a"
+      }
+    },
+    {
+      "from": "*",
+      "to": "amr",
+      "codec": "libopencore_amrnb",
+      "mode": "transcode",
+      "fidelity": "low",
+      "constraints": {
+        "sample_rate": 8000,
+        "channels": 1
+      },
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.amr"
+      }
+    }
+  ]
+}

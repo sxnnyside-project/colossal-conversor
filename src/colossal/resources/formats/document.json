@@ -1,0 +1,123 @@
+{
+  "category": "document",
+  "formats": [
+    "doc",
+    "docx",
+    "odt",
+    "rtf",
+    "txt",
+    "pdf",
+    "md"
+  ],
+  "engines": {
+    "office": "libreoffice",
+    "markdown": "pandoc",
+    "pdf": "pdf_toolchain"
+  },
+  "conversions": [
+    {
+      "from": [
+        "doc",
+        "docx",
+        "odt",
+        "rtf",
+        "txt"
+      ],
+      "to": "pdf",
+      "engine": "office",
+      "mode": "render",
+      "fidelity": "layout",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.pdf"
+      }
+    },
+    {
+      "from": "md",
+      "to": "pdf",
+      "engine": "markdown",
+      "mode": "render",
+      "fidelity": "semantic",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.pdf"
+      }
+    },
+    {
+      "from": "pdf",
+      "to": [
+        "docx",
+        "txt",
+        "md"
+      ],
+      "engine": "pdf",
+      "mode": "extract",
+      "fidelity": "content",
+      "limitations": [
+        "layout_loss",
+        "fonts_not_preserved"
+      ],
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.{target_ext}"
+      }
+    },
+    {
+      "from": [
+        "doc",
+        "docx",
+        "odt",
+        "rtf"
+      ],
+      "to": [
+        "docx",
+        "odt",
+        "rtf"
+      ],
+      "engine": "office",
+      "mode": "transcode",
+      "fidelity": "layout",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.{target_ext}"
+      }
+    },
+    {
+      "from": [
+        "md",
+        "txt"
+      ],
+      "to": [
+        "docx",
+        "odt",
+        "rtf"
+      ],
+      "engine": "markdown",
+      "mode": "render",
+      "fidelity": "semantic",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.{target_ext}"
+      }
+    },
+    {
+      "from": [
+        "doc",
+        "docx",
+        "odt",
+        "rtf"
+      ],
+      "to": [
+        "md",
+        "txt"
+      ],
+      "engine": "pandoc",
+      "mode": "extract",
+      "fidelity": "semantic",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.{target_ext}"
+      }
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "category": "slide",
+  "formats": [
+    "pptx",
+    "ppt",
+    "odp",
+    "pdf",
+    "html",
+    "jpg",
+    "png",
+    "tiff",
+    "webp"
+  ],
+  "conversions": [
+    {
+      "from": "pptx",
+      "to": "pdf",
+      "engine": "soffice",
+      "mode": "semantic",
+      "fidelity": "high",
+      "output": {
+        "type": "single",
+        "pattern": "{input_name_no_ext}.pdf"
+      }
+    },
+    {
+      "from": "ppt",
+      "to": "pdf",
+      "engine": "soffice",
+      "mode": "semantic",
+      "fidelity": "medium",
+      "output": {
+        "type": "single",
+        "pattern": "{input_name_no_ext}.pdf"
+      }
+    },
+    {
+      "from": "odp",
+      "to": "pdf",
+      "engine": "soffice",
+      "mode": "semantic",
+      "fidelity": "high",
+      "output": {
+        "type": "single",
+        "pattern": "{input_name_no_ext}.pdf"
+      }
+    },
+    {
+      "from": "pdf",
+      "to": "pptx",
+      "engine": "soffice",
+      "mode": "visual",
+      "fidelity": "low",
+      "output": {
+        "type": "single",
+        "pattern": "{input_name_no_ext}.pptx"
+      }
+    },
+    {
+      "from": "pdf",
+      "to": "ppt",
+      "engine": "soffice",
+      "mode": "visual",
+      "fidelity": "low",
+      "output": {
+        "type": "single",
+        "pattern": "{input_name_no_ext}.ppt"
+      }
+    },
+    {
+      "from": "pdf",
+      "to": "odp",
+      "engine": "soffice",
+      "mode": "visual",
+      "fidelity": "low",
+      "output": {
+        "type": "single",
+        "pattern": "{input_name_no_ext}.odp"
+      }
+    },
+    {
+      "from": [
+        "pptx",
+        "ppt",
+        "odp"
+      ],
+      "to": "html",
+      "engine": "soffice",
+      "mode": "visual",
+      "fidelity": "experimental",
+      "output": {
+        "type": "single",
+        "pattern": "{input_name_no_ext}.html"
+      }
+    },
+    {
+      "from": "html",
+      "to": [
+        "pptx",
+        "ppt",
+        "odp"
+      ],
+      "engine": "soffice",
+      "mode": "semantic",
+      "fidelity": "low",
+      "output": {
+        "type": "single",
+        "pattern": "{input_name_no_ext}.{output_ext}"
+      }
+    },
+    {
+      "from": [
+        "pptx",
+        "ppt",
+        "odp",
+        "pdf"
+      ],
+      "to": "jpg",
+      "engine": "poppler",
+      "mode": "render",
+      "fidelity": "high",
+      "output": {
+        "type": "mutli",
+        "multi_page": true,
+        "pattern": "{input_name_no_ext}_page_{page_number}.jpg"
+      }
+    },
+    {
+      "from": [
+        "pptx",
+        "ppt",
+        "odp",
+        "pdf"
+      ],
+      "to": "png",
+      "engine": "poppler",
+      "mode": "render",
+      "fidelity": "high",
+      "output": {
+        "type": "mutli",
+        "multi_page": true,
+        "pattern": "{input_name_no_ext}_page_{page_number}.png"
+      }
+    },
+    {
+      "from": [
+        "pptx",
+        "ppt",
+        "odp",
+        "pdf"
+      ],
+      "to": "tiff",
+      "engine": "poppler",
+      "mode": "render",
+      "fidelity": "high",
+      "output": {
+        "type": "mutli",
+        "multi_page": true,
+        "pattern": "{input_name_no_ext}_page_{page_number}.tiff"
+      }
+    },
+    {
+      "from": [
+        "pptx",
+        "ppt",
+        "odp",
+        "pdf"
+      ],
+      "to": "webp",
+      "engine": "poppler",
+      "mode": "render",
+      "fidelity": "high",
+      "output": {
+        "type": "mutli",
+        "multi_page": true,
+        "pattern": "{input_name_no_ext}_page_{page_number}.webp"
+      }
+    }
+  ]
+}

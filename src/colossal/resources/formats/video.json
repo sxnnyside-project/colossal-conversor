@@ -1,0 +1,134 @@
+{
+  "category": "video",
+  "formats": [
+    "mp4",
+    "mkv",
+    "mov",
+    "avi",
+    "webm",
+    "flv",
+    "wmv"
+  ],
+  "codecs": {
+    "video": [
+      "h264",
+      "hevc",
+      "vp9",
+      "av1"
+    ],
+    "audio": [
+      "aac",
+      "mp3",
+      "opus",
+      "vorbis"
+    ]
+  },
+  "engines": {
+    "transcoder": "ffmpeg"
+  },
+  "presets": {
+    "mobile": {
+      "resolution": "1280x720",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "bitrate": "2M"
+    },
+    "desktop": {
+      "resolution": "1920x1080",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "bitrate": "5M"
+    },
+    "archive": {
+      "resolution": "source",
+      "video_codec": "hevc",
+      "audio_codec": "aac",
+      "bitrate": "auto"
+    },
+    "web": {
+      "resolution": "1920x1080",
+      "video_codec": "vp9",
+      "audio_codec": "opus",
+      "bitrate": "auto"
+    }
+  },
+  "conversions": [
+    {
+      "from": [
+        "mp4",
+        "mov",
+        "avi",
+        "mkv",
+        "flv",
+        "wmv"
+      ],
+      "to": "mp4",
+      "engine": "transcoder",
+      "mode": "transcode",
+      "default_preset": "desktop",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.mp4"
+      }
+    },
+    {
+      "from": [
+        "mp4",
+        "mov",
+        "avi",
+        "flv",
+        "wmv"
+      ],
+      "to": "mkv",
+      "engine": "transcoder",
+      "mode": "remux_or_transcode",
+      "fidelity": "source",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.mkv"
+      }
+    },
+    {
+      "from": [
+        "mp4",
+        "mkv",
+        "mov"
+      ],
+      "to": "webm",
+      "engine": "transcoder",
+      "mode": "transcode",
+      "default_preset": "web",
+      "limitations": [
+        "codec_change",
+        "possible_quality_loss"
+      ],
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.webm"
+      }
+    },
+    {
+      "from": [
+        "mp4",
+        "mkv",
+        "mov"
+      ],
+      "to": [
+        "avi",
+        "flv",
+        "wmv"
+      ],
+      "engine": "transcoder",
+      "mode": "legacy_transcode",
+      "fidelity": "low",
+      "warnings": [
+        "deprecated_formats",
+        "reduced_compatibility"
+      ],
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.{target_ext}"
+      }
+    }
+  ]
+}
