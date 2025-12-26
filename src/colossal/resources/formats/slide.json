@@ -13,6 +13,7 @@
   ],
   "conversions": [
     {
+      "name": "PowerPointToPDFConverter",
       "from": "pptx",
       "to": "pdf",
       "engine": "soffice",
@@ -24,6 +25,7 @@
       }
     },
     {
+      "name": "PowerPoint97ToPDFConverter",
       "from": "ppt",
       "to": "pdf",
       "engine": "soffice",
@@ -35,6 +37,7 @@
       }
     },
     {
+      "name": "OpenDocumentPresentationToPDFConverter",
       "from": "odp",
       "to": "pdf",
       "engine": "soffice",
@@ -46,44 +49,20 @@
       }
     },
     {
+      "name": "PDFToSlideConverter",
       "from": "pdf",
-      "to": "pptx",
+      "to": "pptx, ppt, odp",
       "engine": "soffice",
       "mode": "visual",
       "fidelity": "low",
       "output": {
         "type": "single",
-        "pattern": "{input_name_no_ext}.pptx"
+        "pattern": "{input_name_no_ext}.{output_ext}"
       }
     },
     {
-      "from": "pdf",
-      "to": "ppt",
-      "engine": "soffice",
-      "mode": "visual",
-      "fidelity": "low",
-      "output": {
-        "type": "single",
-        "pattern": "{input_name_no_ext}.ppt"
-      }
-    },
-    {
-      "from": "pdf",
-      "to": "odp",
-      "engine": "soffice",
-      "mode": "visual",
-      "fidelity": "low",
-      "output": {
-        "type": "single",
-        "pattern": "{input_name_no_ext}.odp"
-      }
-    },
-    {
-      "from": [
-        "pptx",
-        "ppt",
-        "odp"
-      ],
+      "name": "SlideToHTMLConverter",
+      "from": ["pptx", "ppt", "odp"],
       "to": "html",
       "engine": "soffice",
       "mode": "visual",
@@ -94,12 +73,9 @@
       }
     },
     {
+      "name": "HTMLToSlideConverter",
       "from": "html",
-      "to": [
-        "pptx",
-        "ppt",
-        "odp"
-      ],
+      "to": ["pptx", "ppt", "odp"],
       "engine": "soffice",
       "mode": "semantic",
       "fidelity": "low",
@@ -109,71 +85,16 @@
       }
     },
     {
-      "from": [
-        "pptx",
-        "ppt",
-        "odp",
-        "pdf"
-      ],
-      "to": "jpg",
+      "name": "SlideToImageConverter",
+      "from": ["pptx", "ppt", "odp", "pdf"],
+      "to": ["jpeg", "png", "tiff", "webp"],
       "engine": "poppler",
       "mode": "render",
       "fidelity": "high",
       "output": {
         "type": "mutli",
         "multi_page": true,
-        "pattern": "{input_name_no_ext}_page_{page_number}.jpg"
-      }
-    },
-    {
-      "from": [
-        "pptx",
-        "ppt",
-        "odp",
-        "pdf"
-      ],
-      "to": "png",
-      "engine": "poppler",
-      "mode": "render",
-      "fidelity": "high",
-      "output": {
-        "type": "mutli",
-        "multi_page": true,
-        "pattern": "{input_name_no_ext}_page_{page_number}.png"
-      }
-    },
-    {
-      "from": [
-        "pptx",
-        "ppt",
-        "odp",
-        "pdf"
-      ],
-      "to": "tiff",
-      "engine": "poppler",
-      "mode": "render",
-      "fidelity": "high",
-      "output": {
-        "type": "mutli",
-        "multi_page": true,
-        "pattern": "{input_name_no_ext}_page_{page_number}.tiff"
-      }
-    },
-    {
-      "from": [
-        "pptx",
-        "ppt",
-        "odp",
-        "pdf"
-      ],
-      "to": "webp",
-      "engine": "poppler",
-      "mode": "render",
-      "fidelity": "high",
-      "output": {
-        "type": "mutli",
-        "multi_page": true,
-        "pattern": "{input_name_no_ext}_page_{page_number}.webp"
+        "pattern": "{input_name_no_ext}_page_{page_number}.{output_ext}"
       }
     }
   ]

@@ -13,61 +13,67 @@
   "engine": "ffmpeg",
   "conversions": [
     {
+      "name": "AudioToMP3Converter",
       "from": "*",
       "to": "mp3",
       "codec": "libmp3lame",
       "mode": "transcode",
       "fidelity": "medium",
       "output": {
-        "type": "file",
+        "type": "single_file",
         "pattern": "{input_name_no_ext}.mp3"
       }
     },
     {
+      "name": "AudioToWAVConverter",
       "from": "*",
       "to": "wav",
       "codec": "pcm_s16le",
       "mode": "decode",
       "fidelity": "lossless",
       "output": {
-        "type": "file",
+        "type": "single_file",
         "pattern": "{input_name_no_ext}.wav"
       }
     },
     {
+      "name": "AudioToFLACConverter",
       "from": "*",
       "to": "flac",
       "codec": "flac",
       "mode": "transcode",
       "fidelity": "lossless",
       "output": {
-        "type": "file",
+        "type": "single_file",
         "pattern": "{input_name_no_ext}.flac"
       }
     },
     {
+      "name": "AudioToAACConverter",
       "from": "*",
       "to": "aac",
       "codec": "aac",
       "mode": "transcode",
       "fidelity": "medium",
       "output": {
-        "type": "file",
+        "type": "single_file",
         "pattern": "{input_name_no_ext}.aac"
       }
     },
     {
+      "name": "AudioToOGGConverter",
       "from": "*",
       "to": "ogg",
       "codec": "libvorbis",
       "mode": "transcode",
       "fidelity": "medium",
       "output": {
-        "type": "file",
+        "type": "single_file",
         "pattern": "{input_name_no_ext}.ogg"
       }
     },
     {
+      "name": "AudioToM4AConverter",
       "from": "*",
       "to": "m4a",
       "codec": "aac",
@@ -75,11 +81,12 @@
       "mode": "transcode",
       "fidelity": "medium",
       "output": {
-        "type": "file",
+        "type": "single_file",
         "pattern": "{input_name_no_ext}.m4a"
       }
     },
     {
+      "name": "AudioToAMRConverter",
       "from": "*",
       "to": "amr",
       "codec": "libopencore_amrnb",
@@ -90,7 +97,7 @@
         "channels": 1
       },
       "output": {
-        "type": "file",
+        "type": "single_file",
         "pattern": "{input_name_no_ext}.amr"
       }
     }

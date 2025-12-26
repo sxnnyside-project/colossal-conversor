@@ -14,7 +14,11 @@ class ConverterRegistry:
         input_format: str,
         output_format: str
     ) -> Optional[BaseConverter]:
-        for converter in self._converters:
-            if converter.supports(input_format, output_format):
-                return converter
-        return None
+        return next(
+            (
+                converter
+                for converter in self._converters
+                if converter.supports(input_format, output_format)
+            ),
+            None,
+        )

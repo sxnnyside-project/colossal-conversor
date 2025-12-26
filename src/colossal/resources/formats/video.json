@@ -54,14 +54,8 @@
   },
   "conversions": [
     {
-      "from": [
-        "mp4",
-        "mov",
-        "avi",
-        "mkv",
-        "flv",
-        "wmv"
-      ],
+      "name": "VideoToMP4Converter",
+      "from": ["mp4", "mov", "avi", "mkv", "flv", "wmv"],
       "to": "mp4",
       "engine": "transcoder",
       "mode": "transcode",
@@ -72,13 +66,8 @@
       }
     },
     {
-      "from": [
-        "mp4",
-        "mov",
-        "avi",
-        "flv",
-        "wmv"
-      ],
+      "name": "VideoToMKVConverter",
+      "from": ["mp4", "mov", "avi", "flv", "wmv"],
       "to": "mkv",
       "engine": "transcoder",
       "mode": "remux_or_transcode",
@@ -89,11 +78,8 @@
       }
     },
     {
-      "from": [
-        "mp4",
-        "mkv",
-        "mov"
-      ],
+      "name": "VideoToWebmConverter",
+      "from": ["mp4", "mkv", "mov"],
       "to": "webm",
       "engine": "transcoder",
       "mode": "transcode",
@@ -108,16 +94,9 @@
       }
     },
     {
-      "from": [
-        "mp4",
-        "mkv",
-        "mov"
-      ],
-      "to": [
-        "avi",
-        "flv",
-        "wmv"
-      ],
+      "name": "LegacyVideoConverter",
+      "from": ["mp4", "mkv", "mov"],
+      "to": ["avi", "flv", "wmv"],
       "engine": "transcoder",
       "mode": "legacy_transcode",
       "fidelity": "low",

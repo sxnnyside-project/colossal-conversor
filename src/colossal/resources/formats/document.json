@@ -16,6 +16,7 @@
   },
   "conversions": [
     {
+      "name": "DocumentToPDFConverter",
       "from": [
         "doc",
         "docx",
@@ -33,6 +34,7 @@
       }
     },
     {
+      "name": "MarkdownToPDFConverter",
       "from": "md",
       "to": "pdf",
       "engine": "markdown",
@@ -44,6 +46,7 @@
       }
     },
     {
+      "name": "PDFToDocumentConverter",
       "from": "pdf",
       "to": [
         "docx",
@@ -63,6 +66,7 @@
       }
     },
     {
+      "name": "DocumentToDocumentConverter",
       "from": [
         "doc",
         "docx",
@@ -83,6 +87,7 @@
       }
     },
     {
+      "name": "MarkdownToDocumentConverter",
       "from": [
         "md",
         "txt"
@@ -101,6 +106,7 @@
       }
     },
     {
+      "name": "DocumentToMarkdownConverter",
       "from": [
         "doc",
         "docx",

@@ -19,3 +19,9 @@ dependencies = [
 
 [project.scripts]
 colossal = "colossal.main:main"
+install_audio = "scripts.install_audio_dependencies:main"
+install_video = "scripts.install_video_dependencies:main"
+install_image = "scripts.install_image_dependencies:main"
+install_document = "scripts.install_document_dependencies:main"
+install_sheet = "scripts.install_sheet_dependencies:main"
+install_slide = "scripts.install_slide_dependencies:main"

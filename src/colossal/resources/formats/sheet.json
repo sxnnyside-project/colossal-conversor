@@ -25,6 +25,7 @@
   },
   "conversions": [
     {
+      "name": "SheetToPDFConverter",
       "from": ["xls", "xlsx", "ods"],
       "to": "pdf",
       "engine": "office",
@@ -37,6 +38,7 @@
       }
     },
     {
+      "name": "SheetToTabularConverter",
       "from": ["xls", "xlsx", "ods"],
       "to": ["csv", "tsv"],
       "engine": "tabular",
@@ -48,6 +50,7 @@
       }
     },
     {
+      "name": "TabularToSheetConverter",
       "from": ["csv", "tsv"],
       "to": ["xls", "xlsx", "ods"],
       "engine": "tabular",
@@ -59,6 +62,7 @@
       }
     },
     {
+      "name": "SheetToSheetConverter",
       "from": ["xls", "xlsx", "ods"],
       "to": ["xls", "xlsx", "ods"],
       "engine": "office",
@@ -70,6 +74,7 @@
       }
     },
     {
+      "name": "PDFToSheetConverter",
       "from": "pdf",
       "to": ["xlsx", "ods"],
       "engine": "pdf_table",
@@ -86,6 +91,7 @@
       }
     },
     {
+      "name": "PDFToTabularConverter",
       "from": "pdf",
       "to": ["csv", "tsv"],
       "engine": "pdf_table",
@@ -98,6 +104,7 @@
       }
     },
     {
+      "name": "SheetToHTMLConverter",
       "from": ["xls", "xlsx", "ods"],
       "to": "html",
       "engine": "office",

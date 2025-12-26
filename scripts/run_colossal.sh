@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Script para ejecutar la app usando el virtualenv del proyecto (.venv1)
+# Script para ejecutar la app usando el virtualenv del proyecto (.venv)
 # Úsalo como comando de entrada en una Run Configuration de PyCharm (tipo "Shell script")
 
 set -euo pipefail

@@ -9,19 +9,27 @@ class FormatManifest:
         self.categories = categories
 
     def get_format(self, format_id: str) -> FormatInfo | None:
-        for category in self.categories.values():
-            if format_id in category.formats:
-                return category.formats[format_id]
-        return None
+        return next(
+            (
+                category.formats[format_id]
+                for category in self.categories.values()
+                if format_id in category.formats
+            ),
+            None,
+        )
 
     def format_exists(self, format_id: str) -> bool:
         return self.get_format(format_id) is not None
 
     def category_of(self, format_id: str) -> str | None:
-        for cat_id, category in self.categories.items():
-            if format_id in category.formats:
-                return cat_id
-        return None
+        return next(
+            (
+                cat_id
+                for cat_id, category in self.categories.items()
+                if format_id in category.formats
+            ),
+            None,
+        )
 
 
 def load_format_manifest(path: Path) -> FormatManifest:
@@ -30,17 +38,16 @@ def load_format_manifest(path: Path) -> FormatManifest:
     categories: Dict[str, FormatCategory] = {}
 
     for cat_id, cat_data in data["categories"].items():
-        formats: Dict[str, FormatInfo] = {}
-
-        for fmt_id, fmt_data in cat_data["formats"].items():
-            formats[fmt_id] = FormatInfo(
+        formats: Dict[str, FormatInfo] = {
+            fmt_id: FormatInfo(
                 id=fmt_id,
                 label=fmt_data["label"],
                 extensions=fmt_data["extensions"],
                 mime=fmt_data["mime"],
-                lossy=fmt_data["lossy"]
+                lossy=fmt_data["lossy"],
             )
-
+            for fmt_id, fmt_data in cat_data["formats"].items()
+        }
         categories[cat_id] = FormatCategory(
             id=cat_id,
             label=cat_data["label"],
