@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="headerIconBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1084d0"/>
+      <stop offset="100%" stop-color="#000080"/>
+    </linearGradient>
+    <linearGradient id="iconBevel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#d4d0c8"/>
+      <stop offset="100%" stop-color="#404040"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Windows 95 Inset / Bevel Circle Ring -->
+  <circle cx="16" cy="16" r="15" fill="none" stroke="url(#iconBevel)" stroke-width="2"/>
+  <circle cx="16" cy="16" r="13.5" fill="#000080"/>
+  <circle cx="16" cy="16" r="13" fill="url(#headerIconBg)"/>
+
+  <!-- Crisp Interlocking CC Monogram -->
+  <!-- Outer C Arc -->
+  <path d="M 23 9 A 9 9 0 1 0 23 23" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Inner Loop / Transformation C Curve -->
+  <path d="M 12 11 C 7.5 13.5 7.5 18.5 12 21 C 17 21 21.5 16 12 11 Z" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

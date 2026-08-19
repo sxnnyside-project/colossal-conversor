@@ -1,4 +1,8 @@
-from . import app as app
-from . import main as main
+from __future__ import annotations
 
-__all__ = ["app", "main"]
+try:
+    from colossal import colossal_native
+except ImportError:
+    colossal_native = None  # type: ignore[assignment]
+
+__all__ = ["colossal_native"]

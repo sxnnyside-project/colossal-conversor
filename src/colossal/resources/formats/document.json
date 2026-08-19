@@ -7,12 +7,15 @@
     "rtf",
     "txt",
     "pdf",
-    "md"
+    "md",
+    "html",
+    "epub"
   ],
   "engines": {
-    "office": "libreoffice",
+    "office": "soffice",
     "markdown": "pandoc",
-    "pdf": "pdf_toolchain"
+    "pdf": "soffice",
+    "poppler": "pdftoppm"
   },
   "conversions": [
     {
@@ -22,68 +25,17 @@
         "docx",
         "odt",
         "rtf",
-        "txt"
-      ],
-      "to": "pdf",
-      "engine": "office",
-      "mode": "render",
-      "fidelity": "layout",
-      "output": {
-        "type": "file",
-        "pattern": "{input_name_no_ext}.pdf"
-      }
-    },
-    {
-      "name": "MarkdownToPDFConverter",
-      "from": "md",
-      "to": "pdf",
-      "engine": "markdown",
-      "mode": "render",
-      "fidelity": "semantic",
-      "output": {
-        "type": "file",
-        "pattern": "{input_name_no_ext}.pdf"
-      }
-    },
-    {
-      "name": "PDFToDocumentConverter",
-      "from": "pdf",
-      "to": [
-        "docx",
         "txt",
+        "html",
         "md"
       ],
-      "engine": "pdf",
-      "mode": "extract",
-      "fidelity": "content",
-      "limitations": [
-        "layout_loss",
-        "fonts_not_preserved"
-      ],
-      "output": {
-        "type": "file",
-        "pattern": "{input_name_no_ext}.{target_ext}"
-      }
-    },
-    {
-      "name": "DocumentToDocumentConverter",
-      "from": [
-        "doc",
-        "docx",
-        "odt",
-        "rtf"
-      ],
-      "to": [
-        "docx",
-        "odt",
-        "rtf"
-      ],
+      "to": "pdf",
       "engine": "office",
-      "mode": "transcode",
+      "mode": "render",
       "fidelity": "layout",
       "output": {
         "type": "file",
-        "pattern": "{input_name_no_ext}.{target_ext}"
+        "pattern": "{input_name_no_ext}.pdf"
       }
     },
     {
@@ -93,9 +45,12 @@
         "txt"
       ],
       "to": [
+        "html",
         "docx",
         "odt",
-        "rtf"
+        "rtf",
+        "epub",
+        "pdf"
       ],
       "engine": "markdown",
       "mode": "render",
@@ -111,18 +66,86 @@
         "doc",
         "docx",
         "odt",
-        "rtf"
+        "rtf",
+        "html",
+        "epub",
+        "txt"
       ],
       "to": [
         "md",
-        "txt"
+        "txt",
+        "html"
       ],
-      "engine": "pandoc",
+      "engine": "markdown",
       "mode": "extract",
       "fidelity": "semantic",
       "output": {
         "type": "file",
         "pattern": "{input_name_no_ext}.{target_ext}"
+      }
+    },
+    {
+      "name": "HTMLToDocumentConverter",
+      "from": [
+        "html",
+        "htm"
+      ],
+      "to": [
+        "pdf",
+        "docx",
+        "odt",
+        "rtf",
+        "md",
+        "txt"
+      ],
+      "engine": "office",
+      "mode": "render",
+      "fidelity": "semantic",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.{target_ext}"
+      }
+    },
+    {
+      "name": "DocumentToDocumentConverter",
+      "from": [
+        "doc",
+        "docx",
+        "odt",
+        "rtf",
+        "txt",
+        "html"
+      ],
+      "to": [
+        "docx",
+        "odt",
+        "rtf",
+        "txt",
+        "html",
+        "pdf"
+      ],
+      "engine": "office",
+      "mode": "transcode",
+      "fidelity": "layout",
+      "output": {
+        "type": "file",
+        "pattern": "{input_name_no_ext}.{target_ext}"
+      }
+    },
+    {
+      "name": "PDFToImagesConverter",
+      "from": "pdf",
+      "to": [
+        "png",
+        "jpeg",
+        "tiff"
+      ],
+      "engine": "poppler",
+      "mode": "render",
+      "fidelity": "lossless",
+      "output": {
+        "type": "multi_file",
+        "pattern": "{input_name_no_ext}_page_{page_num}.{target_ext}"
       }
     }
   ]

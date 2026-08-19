@@ -1,27 +1,83 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "colossal-conversor"
 version = "4.0.0"
 description = "Offline multi-format file conversion utility"
-authors = [{ name = "Sxnnyside Project" }]
 readme = "README.md"
-license = { file = "LICENSE" }
+license = { text = "MIT" }
+authors = [{ name = "Sxnnyside Project" }]
 requires-python = ">=3.10"
 
 dependencies = [
-    "PySide6",
-    "pillow",
-    "ffmpeg-python",
-    "pydub",
-    "python-i18n",
-    "cairosvg",
-    "pillow-heif"
+    "PySide6>=6.5.0",
 ]
 
 [project.scripts]
 colossal = "colossal.main:main"
-install_audio = "scripts.install_audio_dependencies:main"
-install_video = "scripts.install_video_dependencies:main"
-install_image = "scripts.install_image_dependencies:main"
-install_document = "scripts.install_document_dependencies:main"
-install_sheet = "scripts.install_sheet_dependencies:main"
-install_slide = "scripts.install_slide_dependencies:main"
+
+[dependency-groups]
+dev = [
+    "cmake>=3.28.0",
+    "hatchling>=1.26.0",
+    "mypy>=1.14.0",
+    "pre-commit>=4.0.0",
+    "pybind11>=2.12.0",
+    "pytest>=8.0.0",
+    "ruff>=0.9.0",
+]
+
+[tool.hatch.build]
+# The compiled native extension is gitignored (it's a build artifact), but
+# hatchling's default file selection is VCS-aware and would silently
+# exclude it from both the sdist and the wheel (built from the sdist) for
+# that same reason. Force-include it in both.
+artifacts = ["*.so", "*.dylib", "*.pyd"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/colossal"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "W",   # pycodestyle warnings
+    "I",   # isort
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = true
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+mypy_path = "src"
+explicit_package_bases = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"

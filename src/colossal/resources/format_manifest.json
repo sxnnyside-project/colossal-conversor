@@ -10,9 +10,9 @@
           "mime": "image/png",
           "lossy": false
         },
-        "jpg": {
+        "jpeg": {
           "label": "JPEG Image",
-          "extensions": [".jpg", ".jpeg"],
+          "extensions": [".jpg", ".jpeg", ".jfif"],
           "mime": "image/jpeg",
           "lossy": true
         },
@@ -21,12 +21,6 @@
           "extensions": [".ico"],
           "mime": "image/x-icon",
           "lossy": false
-        },
-        "jfif": {
-          "label": "JFIF Image",
-          "extensions": [".jfif"],
-          "mime": "image/jpeg",
-          "lossy": true
         },
         "webp": {
           "label": "WEBP Image",
@@ -59,11 +53,17 @@
           "lossy": true,
           "animated": true
         },
-        "heic": {
-          "label": "HEIC Image",
-          "extensions": [".heic"],
-          "mime": "image/heic",
-          "lossy": true
+        "ppm": {
+          "label": "PPM Image",
+          "extensions": [".ppm"],
+          "mime": "image/x-portable-pixmap",
+          "lossy": false
+        },
+        "tga": {
+          "label": "TGA Image",
+          "extensions": [".tga"],
+          "mime": "image/x-targa",
+          "lossy": false
         }
       }
     },
@@ -106,10 +106,22 @@
           "mime": "audio/mp4",
           "lossy": true
         },
-        "amr": {
-          "label": "AMR Audio",
-          "extensions": [".amr"],
-          "mime": "audio/amr",
+        "opus": {
+          "label": "OPUS Audio",
+          "extensions": [".opus"],
+          "mime": "audio/opus",
+          "lossy": true
+        },
+        "aiff": {
+          "label": "AIFF Audio",
+          "extensions": [".aiff", ".aif"],
+          "mime": "audio/x-aiff",
+          "lossy": false
+        },
+        "wma": {
+          "label": "WMA Audio",
+          "extensions": [".wma"],
+          "mime": "audio/x-ms-wma",
           "lossy": true
         }
       }
@@ -158,6 +170,18 @@
           "extensions": [".md"],
           "mime": "text/markdown",
           "lossy": false
+        },
+        "html": {
+          "label": "HTML Document",
+          "extensions": [".html", ".htm"],
+          "mime": "text/html",
+          "lossy": false
+        },
+        "epub": {
+          "label": "EPUB E-Book",
+          "extensions": [".epub"],
+          "mime": "application/epub+zip",
+          "lossy": false
         }
       }
     },
@@ -199,16 +223,16 @@
     "slide": {
       "label": "Presentations",
       "formats": {
-        "pptx": {
-          "label": "PPTX Presentation",
-          "extensions": [".pptx"],
-          "mime": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
-          "lossy": false
-        },
         "ppt": {
           "label": "PPT Presentation",
           "extensions": [".ppt"],
           "mime": "application/vnd.ms-powerpoint",
+          "lossy": false
+        },
+        "pptx": {
+          "label": "PPTX Presentation",
+          "extensions": [".pptx"],
+          "mime": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
           "lossy": false
         },
         "odp": {
@@ -228,22 +252,28 @@
           "mime": "video/mp4",
           "lossy": true
         },
+        "mkv": {
+          "label": "MKV Video",
+          "extensions": [".mkv"],
+          "mime": "video/x-matroska",
+          "lossy": true
+        },
+        "mov": {
+          "label": "QuickTime Video",
+          "extensions": [".mov"],
+          "mime": "video/quicktime",
+          "lossy": true
+        },
         "avi": {
           "label": "AVI Video",
           "extensions": [".avi"],
           "mime": "video/x-msvideo",
           "lossy": true
         },
-        "mov": {
-          "label": "MOV Video",
-          "extensions": [".mov"],
-          "mime": "video/quicktime",
-          "lossy": true
-        },
-        "mkv": {
-          "label": "MKV Video",
-          "extensions": [".mkv"],
-          "mime": "video/x-matroska",
+        "webm": {
+          "label": "WebM Video",
+          "extensions": [".webm"],
+          "mime": "video/webm",
           "lossy": true
         },
         "flv": {

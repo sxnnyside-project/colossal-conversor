@@ -1,37 +1,18 @@
 {
   "category": "sheet",
   "formats": ["xls", "xlsx", "ods", "csv", "tsv", "pdf", "html"],
-  "types": {
-    "spreadsheet": ["xls", "xlsx", "ods"],
-    "tabular": ["csv", "tsv"],
-    "visual": ["pdf", "html"]
-  },
   "engines": {
     "office": "soffice",
-    "tabular": "pandas",
-    "pdf_table": ["tabula", "camelot"]
-  },
-  "presets": {
-    "pdf_export": {
-      "orientation": "auto",
-      "fit_to_page": true,
-      "repeat_headers": true
-    },
-    "csv_safe": {
-      "delimiter": ",",
-      "quote_all": false,
-      "encoding": "utf-8"
-    }
+    "soffice": "soffice"
   },
   "conversions": [
     {
       "name": "SheetToPDFConverter",
-      "from": ["xls", "xlsx", "ods"],
+      "from": ["xls", "xlsx", "ods", "csv", "tsv"],
       "to": "pdf",
-      "engine": "office",
+      "engine": "soffice",
       "mode": "layout_export",
       "fidelity": "high",
-      "default_preset": "pdf_export",
       "output": {
         "type": "file",
         "pattern": "{input_name_no_ext}.pdf"
@@ -41,9 +22,8 @@
       "name": "SheetToTabularConverter",
       "from": ["xls", "xlsx", "ods"],
       "to": ["csv", "tsv"],
-      "engine": "tabular",
+      "engine": "soffice",
       "mode": "flatten_sheets",
-      "warnings": ["formulas_lost", "styles_lost", "multi_sheet_merge"],
       "output": {
         "type": "file",
         "pattern": "{input_name_no_ext}.{target_ext}"
@@ -52,10 +32,9 @@
     {
       "name": "TabularToSheetConverter",
       "from": ["csv", "tsv"],
-      "to": ["xls", "xlsx", "ods"],
-      "engine": "tabular",
-      "mode": "single_sheet_import",
-      "limitations": ["no_formulas", "no_styles"],
+      "to": ["xlsx", "ods"],
+      "engine": "soffice",
+      "mode": "sheet_import",
       "output": {
         "type": "file",
         "pattern": "{input_name_no_ext}.{target_ext}"
@@ -63,56 +42,14 @@
     },
     {
       "name": "SheetToSheetConverter",
-      "from": ["xls", "xlsx", "ods"],
-      "to": ["xls", "xlsx", "ods"],
-      "engine": "office",
+      "from": ["xls", "xlsx", "ods", "csv", "tsv"],
+      "to": ["xlsx", "ods", "csv", "html"],
+      "engine": "soffice",
       "mode": "native_convert",
       "fidelity": "high",
       "output": {
         "type": "file",
         "pattern": "{input_name_no_ext}.{target_ext}"
-      }
-    },
-    {
-      "name": "PDFToSheetConverter",
-      "from": "pdf",
-      "to": ["xlsx", "ods"],
-      "engine": "pdf_table",
-      "mode": "table_extraction",
-      "fidelity": "inferred",
-      "warnings": ["layout_loss", "merged_cells_approx"],
-      "options": {
-        "strategy": ["lattice", "stream"],
-        "one_sheet_per_page": true
-      },
-      "output": {
-        "type": "file",
-        "pattern": "{input_name_no_ext}.{target_ext}"
-      }
-    },
-    {
-      "name": "PDFToTabularConverter",
-      "from": "pdf",
-      "to": ["csv", "tsv"],
-      "engine": "pdf_table",
-      "mode": "table_extraction",
-      "fidelity": "low",
-      "warnings": ["structure_inferred"],
-      "output": {
-        "type": "file",
-        "pattern": "{input_name_no_ext}.{target_ext}"
-      }
-    },
-    {
-      "name": "SheetToHTMLConverter",
-      "from": ["xls", "xlsx", "ods"],
-      "to": "html",
-      "engine": "office",
-      "mode": "visual_export",
-      "fidelity": "medium",
-      "output": {
-        "type": "file",
-        "pattern": "{input_name_no_ext}.html"
       }
     }
   ]

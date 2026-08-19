@@ -1,86 +1,150 @@
 # Colossal Conversor
 
-Colossal Conversor es una aplicación en Python para convertir múltiples formatos de archivo usando una interfaz gráfica moderna (PySide6). Se diseñó con modularidad para soportar convertidores auto-generados, un motor de ejecución robusto y una experiencia de usuario clara.
+![Version](https://img.shields.io/badge/version-4.0.0-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+[![CI](https://github.com/sxnnyside-project/colossal-conservor/workflows/CI/badge.svg)](https://github.com/sxnnyside-project/colossal-conservor/actions)
 
-![Colossal Conversor](Colossal%20Conversor.png)
+<p align="center">
+  <strong>Offline-first ✦ Zero Cloud Dependencies ✦ Multi-format Engine</strong><br>
+  <em>A privacy-first local file conversion desktop utility supporting audio, video, image, document, spreadsheet, and slide formats.</em>
+</p>
 
-## Características principales
+<p align="center">
+  <a href="#about">About</a> ✦
+  <a href="#features">Features</a> ✦
+  <a href="#installation">Installation</a> ✦
+  <a href="#usage">Usage</a> ✦
+  <a href="#architecture">Architecture</a> ✦
+  <a href="#contributing">Contributing</a>
+</p>
 
-- Interfaz gráfica moderna (PySide6) con tema Material-like (QSS) y badges informativos.
-- Conversión de archivos por categorías: audio, documento, imagen, hoja (sheets), slide y video.
-- Soporte para conversión de uno o varios archivos (multi-file): si la conversión produce múltiples archivos se pedirá carpeta de salida.
-- Ejecución de conversiones en background (hilos) para no bloquear la UI, con barra de progreso agregada para tareas múltiples.
-- Hints UX: muestra fidelity, warnings y limitations por conversión según los JSON de manifiesto.
-- Generación e integración dinámica de convertidores (builders) y registro automático.
-- Robustecimiento del motor: validación de formatos, resolución segura de convertidores y manejo de errores con ConversionError.
+---
 
-## Requisitos
+## About
 
-- Python 3.10+ (compatibilidad con las construcciones de typing usadas)
-- PySide6
-- Herramientas de conversión externas según convertidor (por ejemplo `ffmpeg` para video)
+**Colossal Conversor** is an offline desktop application designed to convert files across multiple media and document categories without relying on cloud services or external servers.
 
-En el repositorio hay scripts para instalar dependencias por tipo (scripts/install_*). Por ejemplo, para multimedia puedes revisar `scripts/install_video_dependecies.sh`.
+Most modern file conversion tools rely on remote APIs, introduce tracking, or require subscriptions for basic conversions. Colossal Conversor runs completely locally, combining a C++20 native execution core with a clean desktop interface to deliver predictable, fast, and privacy-respecting file transformations.
 
-## Instalación (rápida)
+Conversions are processed through a structured domain model that coordinates both in-process native transcoders and controlled external engines through a multi-threaded, asynchronous C++ runtime.
 
-Recomendado: crear un entorno virtual y usar las dependencias del proyecto.
+### Philosophy
+
+> _"Local hardware is sufficient for local data: conversion should be fast, private, and deterministic."_
+
+Colossal Conversor is A Sxnnyside Project Release, part of the Sxnnyside Project's desktop utility ecosystem.
+
+## Features
+
+- **Multi-Category Conversion**: Converts audio, video, image, document, spreadsheet, and presentation formats.
+- **C++20 Native Core**: GIL-released native execution with real-time progress streaming for external-tool conversions (e.g. ffmpeg).
+- **In-Process Transcoding**: Built-in zero-CLI native encoders for raw image (BMP, PPM, TGA) and PCM audio manipulation.
+- **Batch & Folder Intake**: Drag-and-drop support for individual files, multiple selections, and recursive directory scanning.
+- **Multi-Output & Pipelines**: Handles 1-to-N page extraction and multi-stage intermediate conversions seamlessly.
+- **Multilingual UI**: Native support for 6 languages (`en`, `es`, `fr`, `ja`, `pt`, `zh`) with dynamic zero-restart switching.
+- **Windows 95 Aesthetics**: Classic 3D beveled desktop design language optimized for high contrast, legibility, and keyboard ergonomics.
+
+## Platform Support
+
+Colossal Conversor targets **macOS, Linux, and Windows**. The native process
+supervisor has a dedicated backend per platform — POSIX (fork/exec/process
+groups) on macOS and Linux, Win32 (`CreateProcessW` + Job Objects) on Windows
+— so process creation, output capture, cancellation, and process-tree
+cleanup behave the same way on every platform.
+
+| Platform | Status                                                                              |
+| -------- | ----------------------------------------------------------------------------------- |
+| macOS    | Verified — built, tested, and used for day-to-day development                       |
+| Linux    | Implemented (shares the macOS POSIX backend); not yet verified on a Linux runner    |
+| Windows  | Implemented against the documented Win32 APIs; not yet verified on a Windows runner |
+
+CI coverage for Linux and Windows is tracked in [CI](https://github.com/sxnnyside-project/colossal-conservor/actions). Contributions verifying either platform are especially welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Installation
+
+### Prerequisites
+
+- Python (>= 3.10)
+- CMake (>= 3.20) and a C++20-compliant compiler (Clang/GCC on macOS/Linux, MSVC on Windows — see [Platform Support](#platform-support) for verification status)
+- External engines for specialized formats (optional, detected at runtime):
+  - `ffmpeg` (for complex video/audio codecs)
+  - `libreoffice` / `soffice` (for office documents, spreadsheets, slides)
+  - `pdftoppm` (for PDF rendering)
+  - `pandoc` (for markup documents)
+
+### From Source
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -U pip
-# Instala PySide6 y otras dependencias necesarias manualmente
-pip install PySide6
-# instala otras dependencias que tu flujo necesite (p.ej. ffmpeg es externo y debe existir en PATH)
+git clone https://github.com/sxnnyside-project/colossal-conservor.git
+cd colossal-conservor
+
+# Install dependencies and build native extension via just
+just install
 ```
 
-Si usas `pyproject.toml`, puedes instalar el paquete en editable mode:
+## Usage
 
 ```bash
-pip install -e .
+# Launch the desktop application
+just dev
+
+# Or run directly via python package entry point
+uv run colossal
 ```
 
-## Uso
+To run conversions:
 
-Hay dos formas recomendadas de ejecutar la aplicación desde el árbol del proyecto:
+1. Drag and drop files or folders into the intake area (or click **Select File(s)** / **Select Folder**).
+2. Choose your target output format from the categorized grid.
+3. Select an output destination with **Save As...**.
+4. Click **Convert** (or press <kbd>Enter</kbd>) to start conversion.
 
-1) Ejecutar el runner del paquete (añade `src` al PYTHONPATH):
+## Architecture
 
-```bash
-python -c "import sys; sys.path.insert(0,'src'); from colossal.app import run_app; run_app()"
+```
+colossal-conservor/
+├── native/          # C++20 native runtime, supervisor, and in-process engines
+├── src/colossal/    # Python domain, UI, i18n subsystem, and application services
+└── tests/           # Comprehensive domain, native, and UI test suites
 ```
 
-2) Usar el script provisto (si lo prefieres):
+The application adheres to a strict layered topology:
 
-```bash
-./scripts/run_colossal.sh
+```text
+PySide6 Presentation (UI)
+        ↓
+Application Services (ConversionApplicationService)
+        ↓
+Domain Model (Request, Plan, Job, Batch, Pipeline, Artifact, Error)
+        ↓
+Python ↔ C++ Boundary (pybind11 / colossal_native)
+        ↓
+C++20 Native Runtime (NativeRuntime, ProcessSupervisor, ToolDiscovery)
+        ↓
+Native Engines & Controlled Binaries
+        ↓
+Produced Artifacts
 ```
 
-En la UI:
-- Selecciona uno o varios archivos con el botón de la derecha (botón tipo icon grande).
-- Selecciona el formato de salida desde la columna izquierda (los formatos se muestran agrupados por categoría y filtrados según disponibilidad).
-- Revisa los badges (fidelity/warnings/limitations) y las notas en el panel derecho.
-- Usa "Guardar como..." para escoger archivo destino o carpeta (para conversiones multi-file se requiere carpeta).
-- Pulsa "Convertir" para iniciar; la operación se ejecutará en background y verás el progreso.
+## Notes
 
-## Conversores y manifest
+Localized user guides (batches, multi-output conversions, pipelines,
+cancellation, troubleshooting) live in [docs/guides/](docs/guides/):
+[English](docs/guides/en/README.md) · [Español](docs/guides/es/README.md) · [Français](docs/guides/fr/README.md) · [日本語](docs/guides/ja/README.md) · [Português](docs/guides/pt/README.md) · [中文](docs/guides/zh/README.md)
 
-Los formatos, categorías y pistas de fidelidad/advertencias están definidos en `src/colossal/resources/formats/*.json` y se cargan en la inicialización. Los convertidores generados por los builders se colocan en `src/colossal/converters` y se registran automáticamente en el inicio.
+## Contributing
 
+Contributions are accepted. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-## Desarrollo y notas técnicas
+Before contributing, read the [Code of Conduct](CODE_OF_CONDUCT.md).
 
-- El motor de conversiones valida formatos y busca el convertidor adecuado en un registro (`ConverterRegistry`).
-- Se aplicaron mejoras para manejar convertidores auto-generados que incluyen metadatos en docstrings (por ejemplo `input_formats`, `output_formats`) — el app parsea estas anotaciones cuando falta información en la instancia.
-- `BaseConverter.supports()` fue hecho defensivo para evitar AttributeError en convertidores generados incompletos.
-- Conversiones se ejecutan con `ConversionEngine.submit()` que marca estados del `ConversionTask` y captura errores en `ConversionError`.
+## License
 
-## Contribuir
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
-- Lee `CHANGELOG.md` para ver la historia de cambios.
-- Abre issues o PRs para reportar bugs o mejorar UX.
+---
 
-## Licencia
-
-Este proyecto se distribuye bajo la licencia MIT (ver `LICENSE`).
+<p align="center">
+  <strong>Colossal Conversor</strong> — A Sxnnyside Project Release<br>
+  <em>&copy; 2026 Sxnnyside Project</em>
+</p>

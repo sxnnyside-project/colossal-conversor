@@ -1,9 +1,15 @@
-def to_snake_case(name: str) -> str:
-    """Convert a CamelCase string to snake_case."""
-    import re
-    s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
-    return re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
+from __future__ import annotations
 
-def to_lower_case(name: str) -> str:
-    """Convert a string to lower_case."""
-    return name.lower()
+from pathlib import Path
+
+from colossal import colossal_native
+
+
+def detect_file_format(path: Path | str) -> str:
+    """Detect file format using binary magic byte inspection."""
+    return colossal_native.FormatDetector.detect_format(path)
+
+
+def detect_file_mime(path: Path | str) -> str:
+    """Detect file MIME type using binary magic byte inspection."""
+    return colossal_native.FormatDetector.detect_mime(path)

@@ -8,7 +8,9 @@
     "ogg",
     "m4a",
     "amr",
-    "mp4"
+    "opus",
+    "aiff",
+    "wma"
   ],
   "engine": "ffmpeg",
   "conversions": [
@@ -16,7 +18,7 @@
       "name": "AudioToMP3Converter",
       "from": "*",
       "to": "mp3",
-      "codec": "libmp3lame",
+      "engine": "ffmpeg",
       "mode": "transcode",
       "fidelity": "medium",
       "output": {
@@ -28,7 +30,7 @@
       "name": "AudioToWAVConverter",
       "from": "*",
       "to": "wav",
-      "codec": "pcm_s16le",
+      "engine": "ffmpeg",
       "mode": "decode",
       "fidelity": "lossless",
       "output": {
@@ -40,7 +42,7 @@
       "name": "AudioToFLACConverter",
       "from": "*",
       "to": "flac",
-      "codec": "flac",
+      "engine": "ffmpeg",
       "mode": "transcode",
       "fidelity": "lossless",
       "output": {
@@ -52,7 +54,7 @@
       "name": "AudioToAACConverter",
       "from": "*",
       "to": "aac",
-      "codec": "aac",
+      "engine": "ffmpeg",
       "mode": "transcode",
       "fidelity": "medium",
       "output": {
@@ -64,7 +66,7 @@
       "name": "AudioToOGGConverter",
       "from": "*",
       "to": "ogg",
-      "codec": "libvorbis",
+      "engine": "ffmpeg",
       "mode": "transcode",
       "fidelity": "medium",
       "output": {
@@ -76,8 +78,7 @@
       "name": "AudioToM4AConverter",
       "from": "*",
       "to": "m4a",
-      "codec": "aac",
-      "container": "mp4",
+      "engine": "ffmpeg",
       "mode": "transcode",
       "fidelity": "medium",
       "output": {
@@ -86,19 +87,27 @@
       }
     },
     {
-      "name": "AudioToAMRConverter",
+      "name": "AudioToOPUSConverter",
       "from": "*",
-      "to": "amr",
-      "codec": "libopencore_amrnb",
+      "to": "opus",
+      "engine": "ffmpeg",
       "mode": "transcode",
-      "fidelity": "low",
-      "constraints": {
-        "sample_rate": 8000,
-        "channels": 1
-      },
+      "fidelity": "high",
       "output": {
         "type": "single_file",
-        "pattern": "{input_name_no_ext}.amr"
+        "pattern": "{input_name_no_ext}.opus"
+      }
+    },
+    {
+      "name": "AudioToAIFFConverter",
+      "from": "*",
+      "to": "aiff",
+      "engine": "ffmpeg",
+      "mode": "transcode",
+      "fidelity": "lossless",
+      "output": {
+        "type": "single_file",
+        "pattern": "{input_name_no_ext}.aiff"
       }
     }
   ]
