@@ -2,6 +2,7 @@
 #include "colossal/error.hpp"
 
 #include <cmath>
+#include <cstring>
 #include <fstream>
 #include <vector>
 
