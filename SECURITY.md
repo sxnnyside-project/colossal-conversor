@@ -8,7 +8,7 @@ If you find a security vulnerability in **Colossal Conversor**, report it privat
 Email — `legal.sxnnyside@sxnnysideproject.com`
 
 **Alternative:**
-[GitHub Private Security Advisory](https://github.com/sxnnyside-project/colossal-conservor/security/advisories/new)
+[GitHub Private Security Advisory](https://github.com/sxnnyside-project/colossal-conversor/security/advisories/new)
 
 ---
 

@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/badge/version-4.0.0-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
-[![CI](https://github.com/sxnnyside-project/colossal-conservor/workflows/CI/badge.svg)](https://github.com/sxnnyside-project/colossal-conservor/actions)
+[![CI](https://github.com/sxnnyside-project/colossal-conversor/workflows/CI/badge.svg)](https://github.com/sxnnyside-project/colossal-conversor/actions)
 
 <p align="center">
   <strong>Offline-first ✦ Zero Cloud Dependencies ✦ Multi-format Engine</strong><br>
@@ -58,7 +58,7 @@ cleanup behave the same way on every platform.
 | Linux    | Implemented (shares the macOS POSIX backend); not yet verified on a Linux runner    |
 | Windows  | Implemented against the documented Win32 APIs; not yet verified on a Windows runner |
 
-CI coverage for Linux and Windows is tracked in [CI](https://github.com/sxnnyside-project/colossal-conservor/actions). Contributions verifying either platform are especially welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+CI coverage for Linux and Windows is tracked in [CI](https://github.com/sxnnyside-project/colossal-conversor/actions). Contributions verifying either platform are especially welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Installation
 
@@ -75,8 +75,8 @@ CI coverage for Linux and Windows is tracked in [CI](https://github.com/sxnnysid
 ### From Source
 
 ```bash
-git clone https://github.com/sxnnyside-project/colossal-conservor.git
-cd colossal-conservor
+git clone https://github.com/sxnnyside-project/colossal-conversor.git
+cd colossal-conversor
 
 # Install dependencies and build native extension via just
 just install
@@ -102,7 +102,7 @@ To run conversions:
 ## Architecture
 
 ```
-colossal-conservor/
+colossal-conversor/
 ├── native/          # C++20 native runtime, supervisor, and in-process engines
 ├── src/colossal/    # Python domain, UI, i18n subsystem, and application services
 └── tests/           # Comprehensive domain, native, and UI test suites

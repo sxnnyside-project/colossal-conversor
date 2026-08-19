@@ -53,8 +53,8 @@ Dépendances Externes ci-dessous).
 ### macOS / Linux
 
 ```bash
-git clone https://github.com/sxnnyside-project/colossal-conservor.git
-cd colossal-conservor
+git clone https://github.com/sxnnyside-project/colossal-conversor.git
+cd colossal-conversor
 just install
 just dev
 ```
@@ -62,8 +62,8 @@ just dev
 ### Windows
 
 ```powershell
-git clone https://github.com/sxnnyside-project/colossal-conservor.git
-cd colossal-conservor
+git clone https://github.com/sxnnyside-project/colossal-conversor.git
+cd colossal-conversor
 just install
 just dev
 ```

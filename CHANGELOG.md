@@ -37,4 +37,4 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-[4.0.0]: https://github.com/sxnnyside-project/colossal-conservor/releases/tag/v4.0.0
+[4.0.0]: https://github.com/sxnnyside-project/colossal-conversor/releases/tag/v4.0.0

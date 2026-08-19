@@ -7,7 +7,7 @@ This document covers how to work with the project as a contributor.
 
 ## Before You Start
 
-- Search [existing issues](https://github.com/sxnnyside-project/colossal-conservor/issues) before opening a new one.
+- Search [existing issues](https://github.com/sxnnyside-project/colossal-conversor/issues) before opening a new one.
 - For significant changes, open an issue first to discuss the direction before writing code.
 - Read the [Code of Conduct](CODE_OF_CONDUCT.md). It applies to all interactions in this project.
 
@@ -15,7 +15,7 @@ This document covers how to work with the project as a contributor.
 
 ## Reporting a Bug
 
-Open a [GitHub Issue](https://github.com/sxnnyside-project/colossal-conservor/issues/new/choose) using the bug report template.
+Open a [GitHub Issue](https://github.com/sxnnyside-project/colossal-conversor/issues/new/choose) using the bug report template.
 
 Include:
 - What you expected to happen
@@ -27,7 +27,7 @@ Include:
 
 ## Proposing a Feature
 
-Open a [GitHub Issue](https://github.com/sxnnyside-project/colossal-conservor/issues/new/choose) using the feature request template, or submit a PR directly if the change is small and self-contained.
+Open a [GitHub Issue](https://github.com/sxnnyside-project/colossal-conversor/issues/new/choose) using the feature request template, or submit a PR directly if the change is small and self-contained.
 
 For larger features, an issue discussion first avoids wasted effort on both sides.
 

@@ -45,8 +45,8 @@ Colossal Conversor 面向 **macOS、Linux 和 Windows**。原生进程监督层�
 ### macOS / Linux
 
 ```bash
-git clone https://github.com/sxnnyside-project/colossal-conservor.git
-cd colossal-conservor
+git clone https://github.com/sxnnyside-project/colossal-conversor.git
+cd colossal-conversor
 just install
 just dev
 ```
@@ -54,8 +54,8 @@ just dev
 ### Windows
 
 ```powershell
-git clone https://github.com/sxnnyside-project/colossal-conservor.git
-cd colossal-conservor
+git clone https://github.com/sxnnyside-project/colossal-conversor.git
+cd colossal-conversor
 just install
 just dev
 ```
